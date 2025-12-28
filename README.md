@@ -2,4 +2,4 @@
 
 This repository is my attempt on implementing what I've learnt in class, for have taken natural language processing (NLP) and artificial neural network (ANN). It aims to test my understanding both mathematically and in code implementation by building from scratch. References primarily used from lecture notes and class' presentations. The implementation will be separated into two stages: using vanilla Bag-of-Words (BoW) for baseline, TF-IDF and  Word Embeddings as its improvement.
 
-So far, I have obtained conclusion that the vanilla BoW model did not work well to the dataset (please see the [notebook](notebooks\spam-email-using-ann-from-scratch.ipynb)). This is primarily because BoW splits words independently without context. Further improvement would be made with TF-IDF and Embeddings.
+So far, I have obtained conclusion that the vanilla BoW model did not work well to the dataset (please see the [notebook](notebooks/spam-email-using-ann-from-scratch.ipynb)). This is primarily because BoW splits words independently without context. Further improvement would be made with TF-IDF and Embeddings.
