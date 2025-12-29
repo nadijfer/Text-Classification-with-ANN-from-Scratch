@@ -36,25 +36,25 @@ def build_bow(cleaned_texts, vocab):
             bow[vocab[token]] += 1
     return bow
 
-# TF-IDF
+# TF-IDF Algorithm
 
-def calcTermFrequency(document, vocab):
-    tf = dict()
+def calcTermFrequency(documents, vocab):
+    termFreq = dict()
     count = 0
-    for token in document:
-        if token in vocab:
-            count += 1
-            freq = {token: count}
-            tf.update(freq)
+    for document in documents:
+        for token in document:
+            if token in vocab:
+                count += 1
+                freq = {token: count}
+                termFreq.update(freq)
             count = 0
-    return tf
+    return termFreq
 
 def calcDocFrequency(termFreqList):
     docList = []
     docFreq = dict()
-    for termfreqs in termFreqList:
-        for keys in termfreqs:
-            docList.append(keys)
+    for keys in termFreqList:
+        docList.append(keys)
     
     for term in docList:
         freq = {term: docList.count(term)}
