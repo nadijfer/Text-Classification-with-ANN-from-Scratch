@@ -2,15 +2,13 @@ import numpy as np
 from preprocessing import preprotext
 
 def build_vocab(documents):
-    """Building list of words from train data for model. The function could be used as:
-    vocab = build_vocab(cleaned_texts)
-    len(vocab), vocab
+    """Build vocabulary from given documents
 
     Args:
-        documents: LIST of 
+        documents (list): list of documents; could be df['text']
 
     Returns:
-        list: vocabulary
+        dict: Vocabulary of words with index
     """
     vocab = []
     for document in documents:
@@ -23,11 +21,14 @@ def build_vocab(documents):
     return vocab
 
 def build_bow(cleaned_texts, vocab):
-    """Build BoW to a token of clened texts
-    doc_bow = [] # bow for each documents
-    for docs in cleaned_texts:
-        docs = build_bow(docs)
-        doc_bow.append(docs)
+    """Build Bag-of-Words to a token of clened texts
+
+    Args:
+        cleaned_texts (list): list of preprocessed (cleaned) documents (texts)
+        vocab (dict): vocabulary generated from documents
+
+    Returns:
+        list: count of the same words existed in cleaned_texts and vocab
     """
     bow = np.zeros((len(vocab)))
     for token in cleaned_texts:
