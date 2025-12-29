@@ -1,5 +1,5 @@
 import numpy as np
-from preprocessing import preprotext
+from src.preprocessing import preprotext
 
 def build_vocab(documents):
     """Build vocabulary from given documents
@@ -35,3 +35,14 @@ def build_bow(cleaned_texts, vocab):
         if token in vocab:
             bow[vocab[token]] += 1
     return bow
+
+def termFrequency(document, vocab):
+    tf = dict()
+    count = 0
+    for token in document:
+        if token in vocab:
+            count += 1
+            freq = {token: count}
+            tf.update(freq)
+            count = 0
+    return tf
