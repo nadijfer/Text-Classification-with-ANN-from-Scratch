@@ -1,4 +1,5 @@
 import numpy as np
+from preprocessing import preprotext
 
 def build_vocab(documents):
     """Building list of words from train data for model. The function could be used as:
@@ -6,7 +7,7 @@ def build_vocab(documents):
     len(vocab), vocab
 
     Args:
-        documents: list of words
+        documents: LIST of 
 
     Returns:
         list: vocabulary
