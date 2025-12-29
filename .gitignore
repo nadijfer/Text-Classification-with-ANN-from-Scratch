@@ -1,0 +1,21 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+.spam-venv/
+env/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# OS and Editor files
+.DS_Store
+thumbs.db
+.idea/
+.vscode/
