@@ -48,17 +48,24 @@ def calcTermFrequency(documents):
     return termFreqList
 
 def calcDocFrequency(termFreqList):
-    docFreq = []
-    docFreqList = {}
+    df = {}
     for tf_doc in termFreqList:
-        for keys in tf_doc:
-            docFreq.append(keys)
+        for token in tf_doc.keys():
+            df[token] = df.get(token, 0) + 1
+    return df
 
-    for tokens in docFreq:
-        freq = {tokens: docFreq.count(tokens)}
-        docFreqList.append(freq)
-        
-    return docFreqList
+def calcIDF(N, docFreq):
+    idfList = {}
+    for df in docFreq:
+        idf_df = np.log10(N/docFreq.get(df))
+        idfList.update({df: idf_df})
+    return idfList
 
-# def calcIDF(docFreqList):
-    
+def calcTFIDF(termFreq, docFreq, idf):
+    tf_idf = [] 
+    for tf in termFreq:
+        tf_idf_doc = {}
+        for tokens in tf:
+            tf_idf_doc[tokens] = docFreq[tokens] * idf[tokens]
+        tf_idf.append(tf_idf_doc)
+    return tf_idf
