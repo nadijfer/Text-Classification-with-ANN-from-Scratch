@@ -66,6 +66,6 @@ def calcTFIDF(termFreq, docFreq, idf):
     for tf in termFreq:
         tf_idf_doc = {}
         for tokens in tf:
-            tf_idf_doc[tokens] = docFreq[tokens] * idf[tokens]
+            tf_idf_doc[tokens] = tf[tokens] * idf[tokens]
         tf_idf.append(tf_idf_doc)
     return tf_idf
