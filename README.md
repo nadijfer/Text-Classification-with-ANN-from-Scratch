@@ -48,4 +48,4 @@ The experimental results indicate that TF-IDF provides a meaningful improvement 
 
 This improvement is reflected in higher recall and F1-score, demonstrating that TF-IDF allows the model to generalize better without modifying the underlying network architecture. Therefore, the enhancement lies in the feature representation rather than model complexity.
 
-The complete implementation and experimental results can be found in this [notebook](spam-email-using-ann-from-scratch.ipynb).
+The complete implementation and experimental results can be found in this [notebook](notebooks/spam-email-using-ann-from-scratch.ipynb).
